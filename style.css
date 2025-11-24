@@ -1,0 +1,357 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lora:wght@400;500;600&display=swap');
+
+:root {
+  --mint: #c7e9dd;
+  --cream: #f7f3ee;
+  --dark: #2b2b2b;
+  --white: #ffffff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Playfair Display", serif;
+  color: var(--dark);
+  background-color: var(--cream);
+  line-height: 1.6;
+}
+
+header {
+  background-color: var(--white);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  animation: fadeIn 0.8s ease-in;
+}
+
+.navbar {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1.5rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo-images {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-img {
+    height: 60px;
+    width: auto;
+    object-fit: contain; 
+}
+
+.logo-title {
+    font-family: 'Playfair Display', serif;
+    font-weight: 600;
+}
+
+.nav-menu {
+  display: flex;
+  gap: 2.5rem;
+  list-style: none;
+}
+
+.nav-menu a {
+  text-decoration: none;
+  color: var(--dark);
+  font-weight: 500;
+  transition: color 0.3s ease;
+  position: relative;
+}
+
+.nav-menu a::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--mint);
+  transition: width 0.3s ease;
+}
+
+.nav-menu a:hover {
+  color: var(--mint);
+}
+
+.nav-menu a:hover::after {
+  width: 100%;
+}
+
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  padding: 8rem 2rem 5rem;
+  background: url("image/bg.jpg") center/cover no-repeat;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.50);
+    backdrop-filter: blur(1px);
+    -webkit-backdrop-filter: blur(1px);
+    z-index: 1;
+    pointer-events: none;
+}
+
+.hero h1 {
+    font-size: 4rem;
+    font-weight: 700;
+    z-index: 2;
+    position: relative;
+}
+
+.hero p {
+    font-size: 1.3rem;
+    font-weight: 700;
+    z-index: 2;
+    margin-bottom: 25px;
+    position: relative;
+}
+
+.btn-hero {
+    display: inline-block;
+    padding: 12px 25px;
+    background-color: var(--mint);
+    color: white;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    z-index: 10;
+    position: relative;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.hero .btn {
+  margin-top: 2rem;
+  padding: 1rem 2.5rem;
+  border-radius: 40px;
+  background: var(--mint);
+  color: var(--white);
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+
+.divider {
+  width: 100px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--mint), transparent);
+  margin: 2rem auto;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem;
+  animation: fadeIn 1.2s ease-in;
+}
+
+.product-card {
+  background-color: var(--white);
+  border: 1px solid var(--mint);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 25px rgba(199, 233, 221, 0.5);
+}
+
+.main-image {
+  width: 100%;
+  height: 280px;
+}
+
+.main-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.thumbnails {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.thumbnails .thumb {
+  width: 100%;
+  aspect-ratio: 3/4;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.thumbnails .thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+}
+
+.product-info {
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.product-info h3 {
+  font-size: 1.4rem;
+  color: var(--dark);
+}
+
+.product-price {
+  color: var(--mint);
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin: 1rem 0;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.8rem 2rem;
+  background: var(--mint);
+  color: var(--white);
+  text-decoration: none;
+  border-radius: 50px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(199, 233, 221, 0.6);
+}
+
+.btn-back {
+  background: var(--dark);
+}
+
+.product-detail {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  padding: 3rem 2rem;
+}
+
+.gallery {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.thumbnail-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.thumbnail {
+  width: 100%;
+  height: 150px;
+  background: var(--cream);
+  border-radius: 8px;
+  border: 1px solid var(--mint);
+  cursor: pointer;
+}
+
+.thumbnail:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(199, 233, 221, 0.3);
+}
+
+.product-details h1 {
+  font-size: 2.5rem;
+  color: var(--dark);
+}
+
+.product-details .price {
+  color: var(--mint);
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.specifications {
+  background-color: var(--white);
+  padding: 1.5rem;
+  border-radius: 8px;
+  border: 1px solid var(--mint);
+}
+
+.specifications h3 {
+  font-size: 1.5rem;
+  color: var(--dark);
+}
+
+.specifications li::before {
+  content: '✓';
+  color: var(--mint);
+  margin-right: 0.5rem;
+}
+
+.about-section {
+  background-color: var(--white);
+  padding: 2rem;
+  border-radius: 12px;
+  border: 1px solid var(--mint);
+}
+
+.contact-item {
+  background-color: var(--white);
+  padding: 2rem;
+  border-radius: 12px;
+  border: 1px solid var(--mint);
+}
+
+footer {
+  background-color: var(--dark);
+  color: var(--white);
+  text-align: center;
+  padding: 2rem;
+}
+
+@media (max-width: 768px) {
+  .product-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .product-detail {
+    grid-template-columns: 1fr;
+  }
+}
